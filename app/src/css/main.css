@@ -1,0 +1,108 @@
+@charset "UTF-8";
+/*
+  ______                 _          _____  _____ _____ 
+ |___  /                | |        / ____|/ ____/ ____|
+    / / ___   ___  _ __ | | __ _  | |    | (___| (___  
+   / / / _ \ / _ \| '_ \| |/ _` | | |     \___ \\___ \ 
+  / /_| (_) | (_) | |_) | | (_| | | |____ ____) |___) |
+ /_____\___/ \___/| .__/|_|\__,_|  \_____|_____/_____/ 
+                  | |                                  
+                  |_|                                  
+*/
+@import url(../fonts/icomoon/style.css);
+.wrapper header#main-header .logo {
+  /* Better Font Rendering =========== */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #242424;
+  margin: 0;
+  letter-spacing: 0.03rem; }
+
+p {
+  line-height: 1.6; }
+
+.container {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1.5rem; }
+
+.wrapper {
+  width: 100%; }
+  .wrapper header#main-header {
+    padding: 2rem 0;
+    background: #6A148E; }
+    .wrapper header#main-header .logo {
+      text-decoration: none;
+      display: inherit;
+      font-size: 5rem;
+      color: #FFFFFF; }
+      .wrapper header#main-header .logo:before {
+        content: ""; }
+      .wrapper header#main-header .logo span {
+        height: 0;
+        font-size: 0;
+        display: inherit; }
+  .wrapper nav {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: #6A148E; }
+    .wrapper nav ul {
+      padding: 0;
+      display: inline-block;
+      margin: 0 -1.8rem; }
+      .wrapper nav ul li {
+        list-style-type: none;
+        float: left; }
+        .wrapper nav ul li a {
+          padding: 1.1rem 1.8rem;
+          text-decoration: none;
+          display: inline-block;
+          color: #FFFFFF;
+          line-height: .85; }
+          .wrapper nav ul li a:hover {
+            background: #5A0D7B; }
+        .wrapper nav ul li.is-active a {
+          background: #5A0D7B; }
+    .wrapper nav.sub-nav {
+      background: #EAECEE;
+      font-size: 1.4rem;
+      padding: .4rem 0; }
+      .wrapper nav.sub-nav ul li a {
+        color: #242424; }
+        .wrapper nav.sub-nav ul li a:hover {
+          background: none; }
+  .wrapper footer#main-footer {
+    background: #6A148E; }
+    .wrapper footer#main-footer ul {
+      padding: 0;
+      margin: 0;
+      display: inline-block; }
+      .wrapper footer#main-footer ul li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 1rem; }
+        .wrapper footer#main-footer ul li:first-child {
+          padding-left: 0; }
+        .wrapper footer#main-footer ul li a {
+          color: #FFFFFF; }

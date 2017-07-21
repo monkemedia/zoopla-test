@@ -1,0 +1,152 @@
+/*
+  ______                 _          _____  _____ _____ 
+ |___  /                | |        / ____|/ ____/ ____|
+    / / ___   ___  _ __ | | __ _  | |    | (___| (___  
+   / / / _ \ / _ \| '_ \| |/ _` | | |     \___ \\___ \ 
+  / /_| (_) | (_) | |_) | | (_| | | |____ ____) |___) |
+ /_____\___/ \___/| .__/|_|\__,_|  \_____|_____/_____/ 
+                  | |                                  
+                  |_|                                  
+*/
+
+// IMPORTS
+@import '../fonts/icomoon/style.css';
+@import 'common/includes';
+@import 'variables/includes';
+
+html {
+	font-size: 62.5%; // Sets up REM base
+}
+
+body {
+	font-family: $font-stack-raleway;
+	font-size: 1.5rem;
+	font-weight: 400;
+	line-height: 1;
+	color: $color-black;
+	margin: 0;
+	letter-spacing: 0.03rem;
+}
+
+p {
+	line-height: 1.6;
+}
+
+.container {
+	width: 100%;
+	max-width: 640px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+.wrapper {
+	width: 100%;
+
+	header#main-header {
+		padding: 2rem 0;
+		background: $color-brand;
+
+		.logo {
+			text-decoration: none;
+			display: inherit;
+			@extend %icomoon;
+			font-size: 5rem;
+			color: $color-white;
+
+			&:before {
+				content: $icon-zoopla-logo;
+			}
+
+			span {
+				height: 0;
+				font-size: 0;
+				display: inherit;
+			}
+		}
+	}
+
+	nav {
+		display: inline-block;
+		width: 100%;
+		font-size: 1.6rem;
+		font-weight: 500;
+		text-transform: uppercase;
+		background: $color-brand;
+
+		ul {
+			padding: 0;
+			display: inline-block;
+			margin: 0 -1.8rem;
+
+			li {
+				list-style-type: none;
+				float: left;
+				a {
+					padding: 1.1rem 1.8rem;
+					text-decoration: none;
+					display: inline-block;
+					color: $color-white;
+					line-height: .85;
+
+					&:hover {
+						background: $color-brand-hover;
+					}
+				}
+
+				&.is-active {
+					a {
+						background: $color-brand-hover;
+					}
+				}
+			}
+		}
+
+		&.sub-nav {
+			background: $color-light-grey;
+			font-size: 1.4rem;
+			padding: .4rem 0;
+
+			ul {
+				li {
+					a {
+						color: $color-black;
+
+						&:hover {
+							background: none;
+						}
+					}
+				}
+			}
+			
+		}
+	}
+
+	main {}
+
+	footer#main-footer {
+		background: $color-brand;
+		ul {
+			padding: 0;
+			margin: 0;
+			display: inline-block;
+
+			li {
+				list-style-type: none;
+				display: inline-block;
+				padding: 1rem;
+
+				&:first-child {
+					padding-left: 0;
+				}
+
+				a {
+					color: $color-white;
+				}
+			}
+		}
+	}
+
+}
+
+
+
