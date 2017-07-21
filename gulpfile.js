@@ -43,7 +43,7 @@ gulp.task('sass', function () {
 gulp.task('watch', function () {
   	gulp.watch('./app/src/sass/*.scss', ['sass']);
   	gulp.watch('./app/src/*.html', ['html']);
-
+  	gulp.watch('./app/src/scripts/*.js', ['lint']);
 });
 
 gulp.task('default', ['connect', 'watch', 'lint']);
