@@ -13,7 +13,7 @@
 
 			function showPanel(currentTarget) {
 				var openedPanel = accordion.querySelector('.is-active'),
-					panel = currentTarget.parentNode.parentNode;
+					panel = currentTarget.parentNode.parentNode.parentNode;
 				// Hide open panels first
 				if (openedPanel) {
 					openedPanel.classList.remove('is-active')
@@ -25,7 +25,7 @@
 			showPanel(e.currentTarget)
 		}
 
-		//
+		// Add eventlisteners to accordion headers
 		for(var i = 0; i < button.length; i++) {
 			button[i].addEventListener('click', accordionEvents);
 		}
