@@ -13,6 +13,7 @@
 @import '../fonts/icomoon/style.css';
 @import 'common/includes';
 @import 'variables/includes';
+@import 'components/includes';
 
 html {
 	font-size: 62.5%; // Sets up REM base
@@ -32,121 +33,135 @@ p {
 	line-height: 1.6;
 }
 
+hr {
+	border-top: 0;
+	border-bottom: 1px solid $color-light-grey;
+}
+
+.wrapper {
+	width: 100%;
+	background: $color-light-grey;
+}
+
 .container {
 	width: 100%;
 	max-width: 640px;
 	margin: 0 auto;
 	padding: 0 1.5rem;
+
+	&.container--box {
+		background: $color-white;
+		margin-top: 2rem; 
+		margin-bottom: 2rem;
+		display: flow-root;
+	}
 }
 
-.wrapper {
-	width: 100%;
+header#main-header {
+	padding: 2rem 0;
+	background: $color-brand;
 
-	header#main-header {
-		padding: 2rem 0;
-		background: $color-brand;
+	.logo {
+		text-decoration: none;
+		display: inherit;
+		@extend %icomoon;
+		font-size: 5rem;
+		color: $color-white;
 
-		.logo {
-			text-decoration: none;
+		&:before {
+			content: $icon-zoopla-logo;
+		}
+
+		span {
+			height: 0;
+			font-size: 0;
 			display: inherit;
-			@extend %icomoon;
-			font-size: 5rem;
-			color: $color-white;
-
-			&:before {
-				content: $icon-zoopla-logo;
-			}
-
-			span {
-				height: 0;
-				font-size: 0;
-				display: inherit;
-			}
 		}
 	}
-
-	nav {
-		display: inline-block;
-		width: 100%;
-		font-size: 1.6rem;
-		font-weight: 500;
-		text-transform: uppercase;
-		background: $color-brand;
-
-		ul {
-			padding: 0;
-			display: inline-block;
-			margin: 0 -1.8rem;
-
-			li {
-				list-style-type: none;
-				float: left;
-				a {
-					padding: 1.1rem 1.8rem;
-					text-decoration: none;
-					display: inline-block;
-					color: $color-white;
-					line-height: .85;
-
-					&:hover {
-						background: $color-brand-hover;
-					}
-				}
-
-				&.is-active {
-					a {
-						background: $color-brand-hover;
-					}
-				}
-			}
-		}
-
-		&.sub-nav {
-			background: $color-light-grey;
-			font-size: 1.4rem;
-			padding: .4rem 0;
-
-			ul {
-				li {
-					a {
-						color: $color-black;
-
-						&:hover {
-							background: none;
-						}
-					}
-				}
-			}
-			
-		}
-	}
-
-	main {}
-
-	footer#main-footer {
-		background: $color-brand;
-		ul {
-			padding: 0;
-			margin: 0;
-			display: inline-block;
-
-			li {
-				list-style-type: none;
-				display: inline-block;
-				padding: 1rem;
-
-				&:first-child {
-					padding-left: 0;
-				}
-
-				a {
-					color: $color-white;
-				}
-			}
-		}
-	}
-
 }
+
+nav {
+	display: inline-block;
+	width: 100%;
+	font-size: 1.6rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	background: $color-brand;
+
+	ul {
+		padding: 0;
+		display: inline-block;
+		margin: 0 -1.8rem;
+
+		li {
+			list-style-type: none;
+			float: left;
+			a {
+				padding: 1.1rem 1.8rem;
+				text-decoration: none;
+				display: inline-block;
+				color: $color-white;
+				line-height: .85;
+
+				&:hover {
+					background: $color-brand-hover;
+				}
+			}
+
+			&.is-active {
+				a {
+					background: $color-brand-hover;
+				}
+			}
+		}
+	}
+
+	&.sub-nav {
+		background: $color-black;
+		font-size: 1.4rem;
+		padding: .4rem 0;
+		text-transform: lowercase;
+
+		ul {
+			li {
+				a {
+					&:hover {
+						background: none;
+					}
+				}
+			}
+		}
+		
+	}
+}
+
+main {}
+
+footer#main-footer {
+	background: $color-brand;
+	ul {
+		padding: 0;
+		margin: 0;
+		display: inline-block;
+
+		li {
+			list-style-type: none;
+			display: inline-block;
+			padding: 1rem;
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			a {
+				color: $color-white;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+
 
 
 
