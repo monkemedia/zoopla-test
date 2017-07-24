@@ -4,33 +4,107 @@
 
 	// Accordion
 	var initAccordion = function() {
-		var button = document.getElementsByClassName('accordion__header--link');
+		var showHide = document.getElementsByClassName('accordion__header--link'),
+			deletePanel = document.getElementsByClassName('accordion__header--delete');
 
-		function accordionEvents(e) {
+		function accordionShowHide(e) {
 			e.preventDefault();
 
-			var accordion = e.currentTarget.closest('.accordion');
+			var currentTarget = e.currentTarget,
+				accordion = currentTarget.closest('.accordion');
 
 			function showPanel(currentTarget) {
-				var openedPanel = accordion.querySelector('.is-active'),
-					panel = currentTarget.parentNode.parentNode.parentNode;
+				var openPanels = accordion.querySelector('.is-active'),
+					panel = currentTarget.parentNode.parentNode,
+					content = panel.querySelector('.accordion__content'),
+					ariaExpandedAll = accordion.querySelectorAll('[aria-expanded="true"]'),
+					ariaHiddenAll = accordion.querySelectorAll('[aria-hidden="false"]');
+
 				// Hide open panels first
-				if (openedPanel) {
-					openedPanel.classList.remove('is-active')
+				if (openPanels) {
+					openPanels.classList.remove('is-active');
+					ariaExpandedAll[0].setAttribute('aria-expanded', false);
+					ariaHiddenAll[0].setAttribute('aria-hidden', true);
 				}
 
 				// Show panel
 				panel.className += ' is-active';
+				currentTarget.setAttribute('aria-expanded', true);
+				content.setAttribute('aria-hidden', false);
 			}
-			showPanel(e.currentTarget)
+			showPanel(e.currentTarget);
 		}
 
-		// Add eventlisteners to accordion headers
-		for(var i = 0; i < button.length; i++) {
-			button[i].addEventListener('click', accordionEvents);
+		function accordionDeletePanel(e) {
+			e.preventDefault();
+
+			var panel = e.currentTarget.closest('.accordion__article');
+			panel.remove();
 		}
+
+		// Add event listeners to accordion headers
+		if (showHide) {
+			for(var i = 0; i < showHide.length; i++) {
+				showHide[i].addEventListener('click', accordionShowHide);
+			}
+		}
+
+		// Add event listeners to remove panel buttons
+		if (deletePanel) {
+			for(var j = 0; j < deletePanel.length; j++) {
+				deletePanel[j].addEventListener('click', accordionDeletePanel);
+			}
+		}
+		
+	};
+
+	// View port sizes
+	var initViewPorts = function() {// Would usually use mediaqueries for viewport size.
+		var resizeTimer;
+
+		function viewPortResize() {
+			var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
+				body = document.body;
+			
+			if (w <= 980) {
+				body.className = 'screen-medium';
+			} else if (w >= 1200) {
+				body.className = 'screen-large';
+			}
+		}
+
+		window.addEventListener('resize', function() {
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(viewPortResize, 250);
+		});
+
+		viewPortResize();
+		
+	};
+
+	var initMobileMenu = function() {
+		var button = document.querySelector('.burger-icon');
+
+		function toggleMenu(e) {
+			e.preventDefault();
+
+			var mainNav = document.querySelector('.main-nav'),
+				currentTarget = e.currentTarget;
+
+			if (mainNav.classList.contains('is-active')) {
+				mainNav.classList.remove('is-active');
+				currentTarget.classList.remove('is-open');
+			} else {
+				mainNav.className += ' is-active';
+				currentTarget.className += ' is-open';
+			}
+		}
+
+		button.addEventListener('click', toggleMenu);
 	};
 
 	initAccordion();
+	initViewPorts();
+	initMobileMenu();
 })();
 

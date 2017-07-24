@@ -38,22 +38,60 @@ hr {
 	border-bottom: 1px solid $color-light-grey;
 }
 
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+  	border: 0;
+}
+
 .wrapper {
 	width: 100%;
 	background: $color-light-grey;
 }
 
 .container {
-	width: 100%;
 	max-width: 640px;
 	margin: 0 auto;
 	padding: 0 1.5rem;
+	position: relative;
+
+	body.screen-medium & { // Less than or equal to 980px
+		
+	}
+
+	body.screen-large & { // Greater than or equal to 1200px
+		max-width: 920px;
+	}
 
 	&.container--box {
 		background: $color-white;
 		margin-top: 2rem; 
 		margin-bottom: 2rem;
 		display: flow-root;
+		padding-bottom: 1rem;
+	}
+
+	.col {
+		width: 100%;
+
+		body.screen-large & {
+			width: 48%;
+			float: left;
+			
+			&:nth-child(even) {
+				padding-left: 1rem;
+			}
+
+			&:nth-child(odd) {
+				padding-right: 1rem;
+			}
+
+		}
 	}
 }
 
@@ -63,7 +101,7 @@ header#main-header {
 
 	.logo {
 		text-decoration: none;
-		display: inherit;
+		display: inline;
 		@extend %icomoon;
 		font-size: 5rem;
 		color: $color-white;
@@ -78,32 +116,72 @@ header#main-header {
 			display: inherit;
 		}
 	}
+
+	.mobile-menu {
+		position: absolute;
+		right: 2rem;
+		top: 50%;
+		margin-top: -.9rem;
+
+		@media (min-width: 980px) {
+			display: none;
+		}
+	}
+
 }
 
-nav {
-	display: inline-block;
+.main-nav,
+.sub-nav {
 	width: 100%;
 	font-size: 1.6rem;
 	font-weight: 500;
 	text-transform: uppercase;
 	background: $color-brand;
+	max-height: 0;
+	overflow: hidden;
+	float: left;
+	transition: max-height .8s;
+
+	@media (min-width: 980px) {
+		display: block;
+		max-height: inherit;
+		overflow: auto;
+	}
+
+	&.is-active {
+		max-height: 400px;
+	}
 
 	ul {
 		padding: 0;
-		display: inline-block;
 		margin: 0 -1.8rem;
 
 		li {
 			list-style-type: none;
 			float: left;
+			width: 100%;
+
+			@media (min-width: 980px) {
+				width: auto;
+			}
+
 			a {
-				padding: 1.1rem 1.8rem;
+				padding: 1.8rem 0;
 				text-decoration: none;
 				display: inline-block;
 				color: $color-white;
 				line-height: .85;
+				width: 100%;
+				text-align: center;
 
-				&:hover {
+				@media (min-width: 980px) {
+					width: auto;
+					text-align: left;
+					padding: 1.1rem 1.8rem;
+
+				}
+
+				&:hover, &:focus {
 					background: $color-brand-hover;
 				}
 			}
@@ -121,11 +199,16 @@ nav {
 		font-size: 1.4rem;
 		padding: .4rem 0;
 		text-transform: lowercase;
+		display: none;
+
+		@media (min-width: 980px) {
+			display: block;
+		}
 
 		ul {
 			li {
 				a {
-					&:hover {
+					&:hover, &:focus {
 						background: none;
 					}
 				}
@@ -135,7 +218,10 @@ nav {
 	}
 }
 
-main {}
+main {
+	width: 100%;
+	display: inline-block;
+}
 
 footer#main-footer {
 	background: $color-brand;

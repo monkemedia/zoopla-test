@@ -10,7 +10,7 @@
                   |_|                                  
 */
 @import url(../fonts/icomoon/style.css);
-.accordion .accordion__article .accordion__header h3:before, header#main-header .logo {
+.accordion .accordion__article .accordion__header .accordion__header--link h3:before, .accordion .accordion__article .accordion__header .accordion__header--delete:before, header#main-header .logo {
   /* Better Font Rendering =========== */
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -30,39 +30,95 @@
     padding: 0 2rem;
     background: #6A148E;
     position: relative; }
-    .accordion .accordion__article .accordion__header h3 {
-      position: relative;
-      padding-left: 2rem; }
-      .accordion .accordion__article .accordion__header h3:before {
-        content: "";
-        padding-right: .4rem;
-        top: -2px;
-        left: -5px;
-        position: absolute;
-        font-size: 2rem;
-        transition: transform .3s;
-        color: #FFFFFF; }
-      .accordion .accordion__article .accordion__header h3 .accordion__header--link {
-        color: #FFFFFF;
-        text-decoration: none; }
+    .accordion .accordion__article .accordion__header .accordion__header--link {
+      color: #FFFFFF;
+      text-decoration: none; }
+      .accordion .accordion__article .accordion__header .accordion__header--link h3 {
+        position: relative;
+        padding-left: 2rem; }
+        body.no-js .accordion .accordion__article .accordion__header .accordion__header--link h3 {
+          padding-left: 0; }
+        .accordion .accordion__article .accordion__header .accordion__header--link h3:before {
+          content: "";
+          padding-right: .4rem;
+          top: -2px;
+          left: -5px;
+          position: absolute;
+          font-size: 2rem;
+          transition: transform .3s;
+          color: #FFFFFF; }
+          body.no-js .accordion .accordion__article .accordion__header .accordion__header--link h3:before {
+            content: ''; }
     .accordion .accordion__article .accordion__header .accordion__header--delete {
       position: absolute;
-      right: 2rem;
+      right: 1.5rem;
       color: #FFFFFF;
-      top: 18px; }
+      top: 12px;
+      text-decoration: none;
+      border-radius: 50%;
+      padding: .6rem;
+      font-size: 1.2rem; }
+      .accordion .accordion__article .accordion__header .accordion__header--delete:before {
+        content: "";
+        top: 1px;
+        position: relative; }
+      .accordion .accordion__article .accordion__header .accordion__header--delete:hover, .accordion .accordion__article .accordion__header .accordion__header--delete:focus {
+        background: #5A0D7B; }
+      body.no-js .accordion .accordion__article .accordion__header .accordion__header--delete {
+        display: none; }
   .accordion .accordion__article .accordion__content {
-    overflow: hidden;
     padding: 0 2rem;
     border: 1px solid #DBDBDB;
     border-top: 0;
+    transition: max-height .3s linear;
     max-height: 0;
-    transition: max-height .3s linear; }
+    overflow: hidden; }
+    body.no-js .accordion .accordion__article .accordion__content {
+      max-height: 300px; }
   .accordion .accordion__article.is-active .accordion__header h3:before {
     transform: rotate(90deg);
     top: 0;
     left: -6px; }
   .accordion .accordion__article.is-active .accordion__content {
-    max-height: 300px; }
+    max-height: 300px !important; }
+
+.burger-icon {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  display: block; }
+  .burger-icon span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out; }
+    .burger-icon span:nth-child(1) {
+      top: 0px; }
+    .burger-icon span:nth-child(2), .burger-icon span:nth-child(3) {
+      top: 7px; }
+    .burger-icon span:nth-child(4) {
+      top: 14px; }
+  .burger-icon.is-open span:nth-child(1) {
+    top: 0;
+    width: 0%;
+    left: 50%; }
+  .burger-icon.is-open span:nth-child(2) {
+    transform: rotate(45deg); }
+  .burger-icon.is-open span:nth-child(3) {
+    transform: rotate(-45deg); }
+  .burger-icon.is-open span:nth-child(4) {
+    top: 0;
+    width: 0%;
+    left: 50%; }
 
 html {
   font-size: 62.5%; }
@@ -83,27 +139,49 @@ hr {
   border-top: 0;
   border-bottom: 1px solid #EAECEE; }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
+
 .wrapper {
   width: 100%;
   background: #EAECEE; }
 
 .container {
-  width: 100%;
   max-width: 640px;
   margin: 0 auto;
-  padding: 0 1.5rem; }
+  padding: 0 1.5rem;
+  position: relative; }
+  body.screen-large .container {
+    max-width: 920px; }
   .container.container--box {
     background: #FFFFFF;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    display: flow-root; }
+    display: flow-root;
+    padding-bottom: 1rem; }
+  .container .col {
+    width: 100%; }
+    body.screen-large .container .col {
+      width: 48%;
+      float: left; }
+      body.screen-large .container .col:nth-child(even) {
+        padding-left: 1rem; }
+      body.screen-large .container .col:nth-child(odd) {
+        padding-right: 1rem; }
 
 header#main-header {
   padding: 2rem 0;
   background: #6A148E; }
   header#main-header .logo {
     text-decoration: none;
-    display: inherit;
+    display: inline;
     font-size: 5rem;
     color: #FFFFFF; }
     header#main-header .logo:before {
@@ -112,38 +190,89 @@ header#main-header {
       height: 0;
       font-size: 0;
       display: inherit; }
+  header#main-header .mobile-menu {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    margin-top: -.9rem; }
+    @media (min-width: 980px) {
+      header#main-header .mobile-menu {
+        display: none; } }
 
-nav {
-  display: inline-block;
+.main-nav,
+.sub-nav {
   width: 100%;
   font-size: 1.6rem;
   font-weight: 500;
   text-transform: uppercase;
-  background: #6A148E; }
-  nav ul {
+  background: #6A148E;
+  max-height: 0;
+  overflow: hidden;
+  float: left;
+  transition: max-height .8s; }
+  @media (min-width: 980px) {
+    .main-nav,
+    .sub-nav {
+      display: block;
+      max-height: inherit;
+      overflow: auto; } }
+  .main-nav.is-active,
+  .sub-nav.is-active {
+    max-height: 400px; }
+  .main-nav ul,
+  .sub-nav ul {
     padding: 0;
-    display: inline-block;
     margin: 0 -1.8rem; }
-    nav ul li {
+    .main-nav ul li,
+    .sub-nav ul li {
       list-style-type: none;
-      float: left; }
-      nav ul li a {
-        padding: 1.1rem 1.8rem;
+      float: left;
+      width: 100%; }
+      @media (min-width: 980px) {
+        .main-nav ul li,
+        .sub-nav ul li {
+          width: auto; } }
+      .main-nav ul li a,
+      .sub-nav ul li a {
+        padding: 1.8rem 0;
         text-decoration: none;
         display: inline-block;
         color: #FFFFFF;
-        line-height: .85; }
-        nav ul li a:hover {
+        line-height: .85;
+        width: 100%;
+        text-align: center; }
+        @media (min-width: 980px) {
+          .main-nav ul li a,
+          .sub-nav ul li a {
+            width: auto;
+            text-align: left;
+            padding: 1.1rem 1.8rem; } }
+        .main-nav ul li a:hover, .main-nav ul li a:focus,
+        .sub-nav ul li a:hover,
+        .sub-nav ul li a:focus {
           background: #5A0D7B; }
-      nav ul li.is-active a {
+      .main-nav ul li.is-active a,
+      .sub-nav ul li.is-active a {
         background: #5A0D7B; }
-  nav.sub-nav {
+  .main-nav.sub-nav,
+  .sub-nav.sub-nav {
     background: #242424;
     font-size: 1.4rem;
     padding: .4rem 0;
-    text-transform: lowercase; }
-    nav.sub-nav ul li a:hover {
+    text-transform: lowercase;
+    display: none; }
+    @media (min-width: 980px) {
+      .main-nav.sub-nav,
+      .sub-nav.sub-nav {
+        display: block; } }
+    .main-nav.sub-nav ul li a:hover, .main-nav.sub-nav ul li a:focus,
+    .sub-nav.sub-nav ul li a:hover,
+    .sub-nav.sub-nav ul li a:focus {
       background: none; }
+
+main {
+  width: 100%;
+  display: inline-block; }
 
 footer#main-footer {
   background: #6A148E; }

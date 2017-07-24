@@ -1,191 +1,235 @@
+<!--
+
+ /$$$$$$$$  /$$$$$$   /$$$$$$  /$$$$$$$  /$$        /$$$$$$        /$$$$$$$$ /$$$$$$$$  /$$$$$$  /$$$$$$$$
+|_____ $$  /$$__  $$ /$$__  $$| $$__  $$| $$       /$$__  $$      |__  $$__/| $$_____/ /$$__  $$|__  $$__/
+     /$$/ | $$  \ $$| $$  \ $$| $$  \ $$| $$      | $$  \ $$         | $$   | $$      | $$  \__/   | $$   
+    /$$/  | $$  | $$| $$  | $$| $$$$$$$/| $$      | $$$$$$$$         | $$   | $$$$$   |  $$$$$$    | $$   
+   /$$/   | $$  | $$| $$  | $$| $$____/ | $$      | $$__  $$         | $$   | $$__/    \____  $$   | $$   
+  /$$/    | $$  | $$| $$  | $$| $$      | $$      | $$  | $$         | $$   | $$       /$$  \ $$   | $$   
+ /$$$$$$$$|  $$$$$$/|  $$$$$$/| $$      | $$$$$$$$| $$  | $$         | $$   | $$$$$$$$|  $$$$$$/   | $$   
+|________/ \______/  \______/ |__/      |________/|__/  |__/         |__/   |________/ \______/    |__/   
+
+Author: Richard Roberts
+Client: Zoopla    
+
+-->                                                           
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Zoopla Test</title>
-	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="./css/main.css">
-</head>
-<body>
-	<div class="wrapper">
-		<header role="banner" id="main-header">
-			<div class="container">
-				<a href="" class="logo">
-					<span>Zoopla</span>
-					<span>Find your next home to buy or rent in the UK</span>
-				</a>
-			</div>
-		</header>
+	<head>
+		<title>Zoopla Test</title>
+		<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="./css/main.css">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5c1862">
+		<meta name="apple-mobile-web-app-title" content="Zoopla">
+		<meta name="application-name" content="Zoopla">
+		<meta name="theme-color" content="#ffffff">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body class="no-js">
+		<div class="wrapper">
+			<header role="banner" id="main-header">
+				<div class="container">
+					<a href="" class="logo">
+						<span>Zoopla</span>
+						<span>Find your next home to buy or rent in the UK</span>
+					</a>
+					<nav class="mobile-menu">
+						<a href="" class="burger-icon" role="navigation">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span class="sr-only">Mobile menu</span>
+						</a>
+					</nav>
+				</div>
+			</header>
 
-		<nav role="navigation" class="main-nav">
-			<div class="container">
-				<ul>
-					<li class="is-active">
-						<a href="">Home</a>
-					</li>
-					<li>
-						<a href="">About</a>
-					</li>
-					<li>
-						<a href="">Help</a>
-					</li>
-					<li>
-						<a href="">Events</a>
-					</li>
-					<li>
-						<a href="">Contact</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-		<nav role="navigation" class="sub-nav">
-			<div class="container">
-				<ul>
-					<li>
-						<a href="">Link 1</a>
-					</li>
-					<li>
-						<a href="">Link 2</a>
-					</li>
-					<li>
-						<a href="">Link 3</a>
-					</li>
-					<li>
-						<a href="">Link 4</a>
-					</li>
-					<li>
-						<a href="">Link 5</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
+			<nav role="navigation" class="main-nav">
+				<div class="container">
+					<ul>
+						<li class="is-active">
+							<a href="">Home</a>
+						</li>
+						<li>
+							<a href="">About</a>
+						</li>
+						<li>
+							<a href="">Help</a>
+						</li>
+						<li>
+							<a href="">Events</a>
+						</li>
+						<li>
+							<a href="">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<nav role="navigation" class="sub-nav">
+				<div class="container">
+					<ul>
+						<li>
+							<a href="">Link 1</a>
+						</li>
+						<li>
+							<a href="">Link 2</a>
+						</li>
+						<li>
+							<a href="">Link 3</a>
+						</li>
+						<li>
+							<a href="">Link 4</a>
+						</li>
+						<li>
+							<a href="">Link 5</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
 
-		<main role="main">
-			<div class="container container--box">
-				<h1>Articles</h1>
-				<hr>
-				<article>
-					<header>
-						<h2>Article Heading 1</h2>
-					</header>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem optio, ipsa consectetur ullam nulla nam! Soluta veniam tempora, modi labore, ratione, repellat consectetur id magnam dolores quia sunt accusantium. Nulla.</p>
-				</article>
-				<article>
-					<header>
-						<h2>Article Heading 2</h2>
-					</header>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem optio, ipsa consectetur ullam nulla nam! Soluta veniam tempora, modi labore, ratione, repellat consectetur id magnam dolores quia sunt accusantium. Nulla.</p>
-				</article>
-				<article>
-					<header>
-						<h2>Article Heading 3</h2>
-					</header>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem optio, ipsa consectetur ullam nulla nam! Soluta veniam tempora, modi labore, ratione, repellat consectetur id magnam dolores quia sunt accusantium. Nulla.</p>
-				</article>
-				<article>
-					<header>
-						<h2>Article Heading 4</h2>
-					</header>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem optio, ipsa consectetur ullam nulla nam! Soluta veniam tempora, modi labore, ratione, repellat consectetur id magnam dolores quia sunt accusantium. Nulla.</p>
-				</article>
-			</div>
-
-			<div class="container container--box">
-
-				<h1>Accordion</h1>
-				<hr>
-
-				<section class="accordion" role="tablist">
-					<article class="accordion__article is-active" role="tab">
-						<header class="accordion__header">
-							<h3>
-								<a href="#" class="accordion__header--link">Section 3</a>
-							</h3>
-							<a href="" class="accordion__header--delete">Remove panel</a>
+			<main role="main">
+				<div class="container container--box">
+					<h1>Articles</h1>
+					<hr>
+					<article class="col">
+						<header>
+							<h2>Article Heading 1</h2>
 						</header>
-						<div class="accordion__content" role="tabpanel">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						</div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem optio, ipsa consectetur ullam nulla nam! Soluta veniam tempora, modi labore, ratione, repellat consectetur id magnam dolores quia sunt accusantium. Nulla.</p>
 					</article>
-					<article class="accordion__article" role="tab">
-						<header class="accordion__header">
-							<h3>
-								<a href="#" class="accordion__header--link">Section 3</a>
-							</h3>
-							<a href="" class="accordion__header--delete">Remove panel</a>
+					<article class="col">
+						<header>
+							<h2>Article Heading 2</h2>
 						</header>
-						<div class="accordion__content" role="tabpanel">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						</div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem optio, ipsa consectetur ullam nulla nam! Soluta veniam tempora, modi labore, ratione, repellat consectetur id magnam dolores quia sunt accusantium. Nulla.</p>
 					</article>
-					<article class="accordion__article" role="tab">
-						<header class="accordion__header">
-							<h3>
-								<a href="#" class="accordion__header--link">Section 3</a>
-							</h3>
-							<a href="" class="accordion__header--delete">Remove panel</a>
+					<article class="col">
+						<header>
+							<h2>Article Heading 3</h2>
 						</header>
-						<div class="accordion__content" role="tabpanel">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						</div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem optio, ipsa consectetur ullam nulla nam! Soluta veniam tempora, modi labore, ratione, repellat consectetur id magnam dolores quia sunt accusantium. Nulla.</p>
 					</article>
-					<article class="accordion__article" role="tab">
-						<header class="accordion__header">
-							<h3>
-								<a href="#" class="accordion__header--link">Section 3</a>
-							</h3>
-							<a href="" class="accordion__header--delete">Remove panel</a>
+					<article class="col">
+						<header>
+							<h2>Article Heading 4</h2>
 						</header>
-						<div class="accordion__content" role="tabpanel">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						</div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem optio, ipsa consectetur ullam nulla nam! Soluta veniam tempora, modi labore, ratione, repellat consectetur id magnam dolores quia sunt accusantium. Nulla.</p>
 					</article>
-				</section>
-			</div>
-		</main>
+				</div>
 
-		<footer id="main-footer" role="footer">
-			<div class="container">
-				<ul>
-					<li>
-						<a href="">Link 1</a>
-					</li>
-					<li>
-						<a href="">Link 2</a>
-					</li>
-					<li>
-						<a href="">Link 3</a>
-					</li>
-					<li>
-						<a href="">Link 4</a>
-					</li>
-					<li>
-						<a href="">Link 5</a>
-					</li>
-				</ul>
-			</div>
-		</footer>
+				<div class="container container--box">
 
-	</div>
-	<script src="./scripts/main.js"></script>
-</body>
+					<h1>Accordion</h1>
+					<hr>
+
+					<section class="accordion" role="tablist">
+						<article class="accordion__article is-active" role="tab">
+							<header class="accordion__header">
+		
+								<a href="#" class="accordion__header--link" aria-expanded="true" aria-controls="panel1">
+									<h3>Section 1</h3>
+								</a>
+		
+								<a href="" class="accordion__header--delete" role="button">
+									<span class="sr-only">Remove panel</span>
+								</a>
+							</header>
+							<div class="accordion__content" aria-labelledby="tab1" aria-hidden="false" role="tabpanel">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</article>
+						<article class="accordion__article">
+							<header class="accordion__header" role="tab">
+								<a href="#" class="accordion__header--link" aria-expanded="true" aria-controls="panel2">
+									<h3>Section 2</h3>
+								</a>
+								<a href="" class="accordion__header--delete" role="button">
+									<span class="sr-only">Remove panel</span>
+								</a>
+							</header>
+							<div class="accordion__content" aria-labelledby="tab2" aria-hidden="true" role="tabpanel">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</article>
+						<article class="accordion__article">
+							<header class="accordion__header" role="tab">
+								<a href="#" class="accordion__header--link" aria-expanded="true" aria-controls="panel3">
+									<h3>Section 3</h3>
+								</a>
+								<a href="" class="accordion__header--delete" role="button">
+									<span class="sr-only">Remove panel</span>
+								</a>
+							</header>
+							<div class="accordion__content" aria-labelledby="tab3" aria-hidden="true" role="tabpanel">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</article>
+						<article class="accordion__article">
+							<header class="accordion__header" role="tab">
+								<a href="#" class="accordion__header--link" aria-expanded="true" aria-controls="panel4">
+									<h3>Section 4</h3>
+								</a>
+								<a href="" class="accordion__header--delete" role="button">
+									<span class="sr-only">Remove panel</span>
+								</a>
+							</header>
+							<div class="accordion__content" aria-labelledby="tab4" aria-hidden="true" role="tabpanel">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</article>
+					</section>
+				</div>
+			</main>
+
+			<footer id="main-footer" role="footer">
+				<div class="container">
+					<ul>
+						<li>
+							<a href="">Link 1</a>
+						</li>
+						<li>
+							<a href="">Link 2</a>
+						</li>
+						<li>
+							<a href="">Link 3</a>
+						</li>
+						<li>
+							<a href="">Link 4</a>
+						</li>
+						<li>
+							<a href="">Link 5</a>
+						</li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+		<script src="./scripts/main.js"></script>
+	</body>
 </html>
