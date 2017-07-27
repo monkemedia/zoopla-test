@@ -5,18 +5,18 @@
 	// Accordion
 	var initAccordion = function() {
 		var showHide = document.getElementsByClassName('accordion__header--link'),
-			deletePanel = document.getElementsByClassName('accordion__header--delete');
+				deletePanel = document.getElementsByClassName('accordion__header--delete');
 
 		function accordionShowHide(e) {
 			e.preventDefault();
 
-			var currentTarget = e.currentTarget,
-				accordion = currentTarget.closest('.accordion');
+			var currentTarget = e.target,
+					accordion = currentTarget.closest('.accordion');
 
 			function showPanel(currentTarget) {
-				var openPanels = accordion.querySelector('.is-active'),
+				var openPanels = accordion.getElementsByClassName('is-active')[0],
 					panel = currentTarget.parentNode.parentNode,
-					content = panel.querySelector('.accordion__content'),
+					content = panel.getElementsByClassName('accordion__content')[0],
 					ariaExpandedAll = accordion.querySelectorAll('[aria-expanded="true"]'),
 					ariaHiddenAll = accordion.querySelectorAll('[aria-hidden="false"]');
 
@@ -83,13 +83,13 @@
 	};
 
 	var initMobileMenu = function() {
-		var button = document.querySelector('.burger-icon');
+		var button = document.getElementsByClassName('burger-icon')[0];
 
 		function toggleMenu(e) {
 			e.preventDefault();
 
-			var mainNav = document.querySelector('.main-nav'),
-				currentTarget = e.currentTarget;
+			var mainNav = document.getElementsByClassName('main-nav')[0],
+				currentTarget = e.target;
 
 			if (mainNav.classList.contains('is-active')) {
 				mainNav.classList.remove('is-active');
